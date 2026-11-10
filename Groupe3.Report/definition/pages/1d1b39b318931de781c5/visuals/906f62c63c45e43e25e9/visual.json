@@ -1,0 +1,90 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "906f62c63c45e43e25e9",
+  "position": {
+    "x": 829.79757085020253,
+    "y": 466.39676113360326,
+    "z": 8,
+    "height": 256.5182186234818,
+    "width": 466.39676113360326,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fait_consultation"
+                        }
+                      },
+                      "Property": "id_patient"
+                    }
+                  },
+                  "Function": 2
+                }
+              },
+              "queryRef": "Min(fait_consultation.id_patient)",
+              "nativeQueryRef": "Patients consultés",
+              "displayName": "Patients consultés"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "fait_consultation"
+                      }
+                    },
+                    "Property": "id_patient"
+                  }
+                },
+                "Function": 2
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7f8576d607397c32aa1e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fait_consultation"
+                  }
+                },
+                "Property": "id_patient"
+              }
+            },
+            "Function": 2
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 1256.0151418374626,
-        "y": 579.23514307020127
+        "x": 698.46735500353316,
+        "y": 0
       },
       "nodes": [
         {
@@ -19,12 +19,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 3
         },
         {
           "location": {
-            "x": 1241.2428323974782,
-            "y": 429.84230355558873
+            "x": 1192.219023417068,
+            "y": 416.01507538162684
           },
           "nodeIndex": "dim_etablissement",
           "nodeLineageTag": "e7024687-54b5-4494-a1dc-5a3e70554563",
@@ -32,7 +32,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 11
         },
         {
           "location": {
@@ -45,7 +45,7 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 4
         },
         {
           "location": {
@@ -58,7 +58,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 4
+          "zIndex": 12
         },
         {
           "location": {
@@ -114,8 +114,8 @@
         },
         {
           "location": {
-            "x": 1816.80929646737,
-            "y": 314.64417044993564
+            "x": 1872.1182091632172,
+            "y": 273.1624859280501
           },
           "nodeIndex": "fait_hospitalisation",
           "nodeLineageTag": "950efa73-a506-4474-8dba-353247931ed0",
@@ -140,7 +140,7 @@
         }
       ],
       "name": "Toutes les tables",
-      "zoomValue": 79.553182037699912,
+      "zoomValue": 70.955543900968934,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

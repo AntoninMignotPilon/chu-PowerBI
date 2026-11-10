@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "a8aab1917649c75b3103",
+  "position": {
+    "x": 829.79757085020253,
+    "y": 204.04858299595145,
+    "z": 6,
+    "height": 219.59514170040487,
+    "width": 466.39676113360326,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fait_consultation"
+                    }
+                  },
+                  "Property": "Taux consultation établissement"
+                }
+              },
+              "queryRef": "fait_consultation.Taux consultation établissement",
+              "nativeQueryRef": "Taux consultation établissement"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fait_consultation"
+                  }
+                },
+                "Property": "Taux consultation établissement"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "808a8ff333dcb10d1ede",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fait_consultation"
+              }
+            },
+            "Property": "Taux consultation établissement"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
