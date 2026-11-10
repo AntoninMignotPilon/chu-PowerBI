@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "1d1b39b318931de781c5",
+  "displayName": "KPI 1 - Consultation par établissement",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920
+}

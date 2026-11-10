@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "7951fb0c2eb9da2d5e67",
+  "displayName": "KPI 5 - Hospitalisation par sexe et âge",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920
+}
