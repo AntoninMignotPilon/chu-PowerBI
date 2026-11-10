@@ -1,0 +1,46 @@
+table dim_localisation
+	lineageTag: 58c89451-b41c-43b2-9dbb-d9b693ca386a
+
+	column code_commune_insee
+		dataType: string
+		lineageTag: 7513fc80-dbb6-4ee3-a293-3093a44b0e94
+		summarizeBy: none
+		sourceColumn: code_commune_insee
+
+		annotation SummarizationSetBy = Automatic
+
+	column libelle_commune
+		dataType: string
+		lineageTag: f897126f-309c-42b6-9127-45dfd4938ecb
+		summarizeBy: none
+		sourceColumn: libelle_commune
+
+		annotation SummarizationSetBy = Automatic
+
+	column code_region
+		dataType: string
+		lineageTag: 284f1a6f-d3bd-420e-b095-410ecbf162ea
+		summarizeBy: none
+		sourceColumn: code_region
+
+		annotation SummarizationSetBy = Automatic
+
+	column libelle_region
+		dataType: string
+		lineageTag: f198e006-6028-43f0-8aa7-2c5217a4a45c
+		summarizeBy: none
+		sourceColumn: libelle_region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_localisation = m
+		mode: import
+		source =
+				let
+				    Source = Odbc.DataSource("dsn=Hive Gold", [HierarchicalNavigation=true]),
+				    HIVE_Database = Source{[Name="HIVE",Kind="Database"]}[Data],
+				    gold_Schema = HIVE_Database{[Name="gold",Kind="Schema"]}[Data],
+				    dim_localisation_Table = gold_Schema{[Name="dim_localisation",Kind="Table"]}[Data]
+				in
+				    dim_localisation_Table
+

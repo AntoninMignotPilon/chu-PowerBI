@@ -1,0 +1,38 @@
+table dim_professionnel
+	lineageTag: 745ca79f-1473-4f81-a948-2f7e0dff41f9
+
+	column identifiant
+		dataType: string
+		lineageTag: d3268651-3da0-416a-b44d-4adf13798d64
+		summarizeBy: none
+		sourceColumn: identifiant
+
+		annotation SummarizationSetBy = Automatic
+
+	column profession
+		dataType: string
+		lineageTag: e0bf717b-9c33-4eee-8803-82baf585060e
+		summarizeBy: none
+		sourceColumn: profession
+
+		annotation SummarizationSetBy = Automatic
+
+	column specialite
+		dataType: string
+		lineageTag: b938e3b2-772d-4807-a7c3-c10ab41c8bd6
+		summarizeBy: none
+		sourceColumn: specialite
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_professionnel = m
+		mode: import
+		source =
+				let
+				    Source = Odbc.DataSource("dsn=Hive Gold", [HierarchicalNavigation=true]),
+				    HIVE_Database = Source{[Name="HIVE",Kind="Database"]}[Data],
+				    gold_Schema = HIVE_Database{[Name="gold",Kind="Schema"]}[Data],
+				    dim_professionnel_Table = gold_Schema{[Name="dim_professionnel",Kind="Table"]}[Data]
+				in
+				    dim_professionnel_Table
+

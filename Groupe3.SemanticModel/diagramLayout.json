@@ -4,12 +4,143 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
-        "y": 0
+        "x": 1256.0151418374626,
+        "y": 579.23514307020127
       },
-      "nodes": [],
+      "nodes": [
+        {
+          "location": {
+            "x": 1763.6960283186272,
+            "y": 34.142888281039575
+          },
+          "nodeIndex": "dim_diagnostic",
+          "nodeLineageTag": "1c506ad6-864a-44fa-8728-59b1ab692d6e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1241.2428323974782,
+            "y": 429.84230355558873
+          },
+          "nodeIndex": "dim_etablissement",
+          "nodeLineageTag": "e7024687-54b5-4494-a1dc-5a3e70554563",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1988.7551339233382,
+            "y": 606.65614123315322
+          },
+          "nodeIndex": "dim_localisation",
+          "nodeLineageTag": "58c89451-b41c-43b2-9dbb-d9b693ca386a",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1436.414766438477,
+            "y": 0
+          },
+          "nodeIndex": "dim_patient",
+          "nodeLineageTag": "cc864772-6b9c-4d7a-a33f-7cc822e3c181",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 881.5281048292145,
+            "y": 117.51531315956268
+          },
+          "nodeIndex": "dim_professionnel",
+          "nodeLineageTag": "745ca79f-1473-4f81-a948-2f7e0dff41f9",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1460.3653269139913,
+            "y": 849.56998537118636
+          },
+          "nodeIndex": "dim_temps",
+          "nodeLineageTag": "55848a4d-6d4a-4fac-bfa9-8eac44ad880c",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 880.2679188753832,
+            "y": 493.853715133378
+          },
+          "nodeIndex": "fait_consultation",
+          "nodeLineageTag": "8caf33b1-f6e7-40d8-a4d0-19330523202d",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 1988.0000000000005,
+            "y": 871.08334674177422
+          },
+          "nodeIndex": "fait_deces",
+          "nodeLineageTag": "cafac6c9-27ff-48a1-932e-9967aeebae75",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1816.80929646737,
+            "y": 314.64417044993564
+          },
+          "nodeIndex": "fait_hospitalisation",
+          "nodeLineageTag": "950efa73-a506-4474-8dba-353247931ed0",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 873.80811991522114,
+            "y": 872.44468028964263
+          },
+          "nodeIndex": "fait_satisfaction",
+          "nodeLineageTag": "223f40dc-42dc-4fb9-9a54-a703920ce235",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 9
+        }
+      ],
       "name": "Toutes les tables",
-      "zoomValue": 100,
+      "zoomValue": 79.553182037699912,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

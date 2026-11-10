@@ -1,0 +1,61 @@
+relationship 38a389be-8d07-4f1a-ae2c-36d8e816bf2d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_temps.date_complete
+	toColumn: LocalDateTable_963c2be4-26a2-42fe-b8d6-85235b6d0cb6.Date
+
+relationship 7cdfb5c5-0b54-4cc8-f1bd-863021f0a82e
+	fromColumn: fait_consultation.id_professionnel
+	toColumn: dim_professionnel.identifiant
+
+relationship 5e89ac22-1c8f-7661-0443-0266647d4891
+	fromColumn: fait_consultation.date_complete
+	toColumn: dim_temps.date_complete
+
+relationship a4523e61-b2a0-18b3-9b32-193c3a89b933
+	fromColumn: fait_consultation.id_patient
+	toColumn: dim_patient.identifiant
+
+relationship ba697391-8cc8-7cad-9bbb-4a95b4c7f09d
+	fromColumn: fait_consultation.id_diagnostic
+	toColumn: dim_diagnostic.code_cim10
+
+relationship 8d65df44-1ccc-7749-87d9-9f155c942f06
+	fromColumn: fait_consultation.id_etablissement
+	toColumn: dim_etablissement.identifiant_organisation
+
+relationship 9bbe1194-eef0-764b-7b7f-42304d65bba1
+	fromColumn: fait_hospitalisation.id_patient
+	toColumn: dim_patient.identifiant
+
+relationship f68ae32c-bfbc-6b7c-f035-ce1b194c4158
+	fromColumn: fait_hospitalisation.id_diagnostic
+	toColumn: dim_diagnostic.code_cim10
+
+relationship b1d899fb-273e-600f-c6fe-dbf10d714e0c
+	fromColumn: fait_hospitalisation.id_etablissement
+	toColumn: dim_etablissement.identifiant_organisation
+
+relationship 398441d2-e2ca-ab96-515d-4ac37c497ed8
+	fromColumn: fait_hospitalisation.date_complete
+	toColumn: dim_temps.date_complete
+
+relationship 1f2f183d-3e7d-b8d9-81c5-7083d13d59f2
+	fromColumn: fait_deces.id_localisation
+	toColumn: dim_localisation.code_commune_insee
+
+relationship 0824b368-09f6-4e38-e3c7-b49e36dc2078
+	fromColumn: fait_deces.date_complete
+	toColumn: dim_temps.date_complete
+
+relationship 8cbae777-fefb-e5f1-0572-f6ee19dddcc3
+	fromColumn: fait_satisfaction.id_etablissement
+	toColumn: dim_etablissement.identifiant_organisation
+
+relationship a789b84b-d24a-c5ca-13c7-21f066b19f49
+	fromColumn: fait_satisfaction.date_complete
+	toColumn: dim_temps.date_complete
+
+relationship 8ed4dc91-89a5-0383-5bc9-a7ca080ec9a4
+	fromColumn: dim_etablissement.id_localisation
+	toColumn: dim_localisation.code_commune_insee
+

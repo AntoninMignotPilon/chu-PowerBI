@@ -1,0 +1,91 @@
+table dim_temps
+	lineageTag: 55848a4d-6d4a-4fac-bfa9-8eac44ad880c
+
+	column date_complete
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cae2deac-3e51-4f75-9610-021452084faa
+		summarizeBy: none
+		sourceColumn: date_complete
+
+		variation Variation
+			isDefault
+			relationship: 38a389be-8d07-4f1a-ae2c-36d8e816bf2d
+			defaultHierarchy: LocalDateTable_963c2be4-26a2-42fe-b8d6-85235b6d0cb6.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column jour
+		dataType: int64
+		formatString: 0
+		lineageTag: e5ffc088-6e4a-4ee3-a87c-910c152f1509
+		summarizeBy: sum
+		sourceColumn: jour
+
+		annotation SummarizationSetBy = Automatic
+
+	column libelle_jour
+		dataType: string
+		lineageTag: bd3f7aba-97d2-439c-967a-5973dc5561b6
+		summarizeBy: none
+		sourceColumn: libelle_jour
+
+		annotation SummarizationSetBy = Automatic
+
+	column mois
+		dataType: int64
+		formatString: 0
+		lineageTag: 26a304c7-9d38-4777-8dee-cf684c168e57
+		summarizeBy: sum
+		sourceColumn: mois
+
+		annotation SummarizationSetBy = Automatic
+
+	column libelle_mois
+		dataType: string
+		lineageTag: 026f8abc-f158-4d73-bbcc-64456a60f2ab
+		summarizeBy: none
+		sourceColumn: libelle_mois
+
+		annotation SummarizationSetBy = Automatic
+
+	column annee
+		dataType: int64
+		formatString: 0
+		lineageTag: 373a6550-7875-4eb3-990b-78a2e0f21301
+		summarizeBy: sum
+		sourceColumn: annee
+
+		annotation SummarizationSetBy = Automatic
+
+	column trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: dde4d3a6-f747-44dc-81bc-34171e2f89d6
+		summarizeBy: sum
+		sourceColumn: trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column est_weekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ad8e75aa-7ce8-48c5-923b-499afffe3096
+		summarizeBy: none
+		sourceColumn: est_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_temps = m
+		mode: import
+		source =
+				let
+				    Source = Odbc.DataSource("dsn=Hive Gold", [HierarchicalNavigation=true]),
+				    HIVE_Database = Source{[Name="HIVE",Kind="Database"]}[Data],
+				    gold_Schema = HIVE_Database{[Name="gold",Kind="Schema"]}[Data],
+				    dim_temps_Table = gold_Schema{[Name="dim_temps",Kind="Table"]}[Data]
+				in
+				    dim_temps_Table
+

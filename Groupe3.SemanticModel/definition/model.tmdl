@@ -2,6 +2,7 @@ model Model
 	culture: fr-FR
 	defaultPowerBIDataSourceVersion: powerBI_V3
 	sourceQueryCulture: fr-FR
+	maxParallelismPerRefresh: 1
 	valueFilterBehavior: independent
 	dataAccessOptions
 		legacyRedirects
@@ -10,6 +11,21 @@ model Model
 annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["dim_diagnostic","dim_etablissement","dim_localisation","dim_patient","dim_professionnel","dim_temps","fait_consultation","fait_deces","fait_hospitalisation","fait_satisfaction"]
+
+ref table dim_diagnostic
+ref table dim_etablissement
+ref table dim_localisation
+ref table dim_patient
+ref table dim_professionnel
+ref table dim_temps
+ref table DateTableTemplate_8e7b8e14-975e-4772-bfa3-6746e6993ef9
+ref table LocalDateTable_963c2be4-26a2-42fe-b8d6-85235b6d0cb6
+ref table fait_consultation
+ref table fait_deces
+ref table fait_hospitalisation
+ref table fait_satisfaction
 
 ref cultureInfo fr-FR
 

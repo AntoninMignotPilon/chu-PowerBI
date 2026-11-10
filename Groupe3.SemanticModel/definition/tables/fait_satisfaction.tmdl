@@ -1,0 +1,72 @@
+table fait_satisfaction
+	lineageTag: 223f40dc-42dc-4fb9-9a54-a703920ce235
+
+	column id_satisfaction
+		dataType: string
+		lineageTag: 9a60b63c-9e81-4ab0-aa91-4b07c7d8dd91
+		summarizeBy: none
+		sourceColumn: id_satisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column type_enquete
+		dataType: string
+		lineageTag: 444be4c7-6e63-4e88-befa-6e082de7490b
+		summarizeBy: none
+		sourceColumn: type_enquete
+
+		annotation SummarizationSetBy = Automatic
+
+	column score_global
+		dataType: double
+		lineageTag: ace69cdd-84ec-406c-b3ba-b8fa6281bd07
+		summarizeBy: sum
+		sourceColumn: score_global
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column nb_repondants
+		dataType: int64
+		formatString: 0
+		lineageTag: 39b0b3ba-9308-45c9-aeb4-742dc7ec0e6d
+		summarizeBy: sum
+		sourceColumn: nb_repondants
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_complete
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2ee37757-8e44-454f-a968-d4f43eb23bd8
+		summarizeBy: none
+		sourceColumn: date_complete
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column id_etablissement
+		dataType: string
+		lineageTag: bcf2915a-9b2f-4d5e-8ddf-8c9ae5adff1d
+		summarizeBy: none
+		sourceColumn: id_etablissement
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fait_satisfaction = m
+		mode: import
+		source =
+				let
+				    Source = Odbc.DataSource("dsn=Hive Gold", [HierarchicalNavigation=true]),
+				    HIVE_Database = Source{[Name="HIVE",Kind="Database"]}[Data],
+				    gold_Schema = HIVE_Database{[Name="gold",Kind="Schema"]}[Data],
+				    fait_satisfaction_Table = gold_Schema{[Name="fait_satisfaction",Kind="Table"]}[Data]
+				in
+				    fait_satisfaction_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

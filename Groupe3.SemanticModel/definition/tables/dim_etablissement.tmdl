@@ -1,0 +1,38 @@
+table dim_etablissement
+	lineageTag: e7024687-54b5-4494-a1dc-5a3e70554563
+
+	column identifiant_organisation
+		dataType: string
+		lineageTag: 1aabc62e-fba5-486f-83bb-d29bb9ffef6a
+		summarizeBy: none
+		sourceColumn: identifiant_organisation
+
+		annotation SummarizationSetBy = Automatic
+
+	column nom_etablissement
+		dataType: string
+		lineageTag: 52c2042b-7619-4364-a574-80bac015e0e3
+		summarizeBy: none
+		sourceColumn: nom_etablissement
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_localisation
+		dataType: string
+		lineageTag: 261f5e7c-f14a-46cf-b8a3-360477849bb1
+		summarizeBy: none
+		sourceColumn: id_localisation
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_etablissement = m
+		mode: import
+		source =
+				let
+				    Source = Odbc.DataSource("dsn=Hive Gold", [HierarchicalNavigation=true]),
+				    HIVE_Database = Source{[Name="HIVE",Kind="Database"]}[Data],
+				    gold_Schema = HIVE_Database{[Name="gold",Kind="Schema"]}[Data],
+				    dim_etablissement_Table = gold_Schema{[Name="dim_etablissement",Kind="Table"]}[Data]
+				in
+				    dim_etablissement_Table
+

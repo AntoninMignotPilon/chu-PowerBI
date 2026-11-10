@@ -1,0 +1,30 @@
+table dim_patient
+	lineageTag: cc864772-6b9c-4d7a-a33f-7cc822e3c181
+
+	column identifiant
+		dataType: string
+		lineageTag: 9b862a0c-8fcf-4407-b660-24c8e0b38ea3
+		summarizeBy: none
+		sourceColumn: identifiant
+
+		annotation SummarizationSetBy = Automatic
+
+	column sexe
+		dataType: string
+		lineageTag: 2f78f326-be51-40b1-92de-ac95b3108139
+		summarizeBy: none
+		sourceColumn: sexe
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_patient = m
+		mode: import
+		source =
+				let
+				    Source = Odbc.DataSource("dsn=Hive Gold", [HierarchicalNavigation=true]),
+				    HIVE_Database = Source{[Name="HIVE",Kind="Database"]}[Data],
+				    gold_Schema = HIVE_Database{[Name="gold",Kind="Schema"]}[Data],
+				    dim_patient_Table = gold_Schema{[Name="dim_patient",Kind="Table"]}[Data]
+				in
+				    dim_patient_Table
+

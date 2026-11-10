@@ -1,0 +1,30 @@
+table dim_diagnostic
+	lineageTag: 1c506ad6-864a-44fa-8728-59b1ab692d6e
+
+	column code_cim10
+		dataType: string
+		lineageTag: 104f8c28-cf9d-4a16-a035-2697a614a0dc
+		summarizeBy: none
+		sourceColumn: code_cim10
+
+		annotation SummarizationSetBy = Automatic
+
+	column libelle_diagnostic
+		dataType: string
+		lineageTag: 8d091c26-56c6-4548-9fef-510cf9fdfc5d
+		summarizeBy: none
+		sourceColumn: libelle_diagnostic
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_diagnostic = m
+		mode: import
+		source =
+				let
+				    Source = Odbc.DataSource("dsn=Hive Gold", [HierarchicalNavigation=true]),
+				    HIVE_Database = Source{[Name="HIVE",Kind="Database"]}[Data],
+				    gold_Schema = HIVE_Database{[Name="gold",Kind="Schema"]}[Data],
+				    dim_diagnostic_Table = gold_Schema{[Name="dim_diagnostic",Kind="Table"]}[Data]
+				in
+				    dim_diagnostic_Table
+
