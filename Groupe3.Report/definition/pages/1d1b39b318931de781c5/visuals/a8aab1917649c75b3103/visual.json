@@ -4,10 +4,10 @@
   "position": {
     "x": 829.79757085020253,
     "y": 204.04858299595145,
-    "z": 6,
+    "z": 6000,
     "height": 219.59514170040487,
     "width": 466.39676113360326,
-    "tabOrder": 6
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -52,23 +52,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "808a8ff333dcb10d1ede",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fait_consultation"
-              }
-            },
-            "Property": "Taux consultation établissement"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "72fa7899870e0e79a068",
+  "position": {
+    "x": 1086.6666666666667,
+    "y": 266.66666666666669,
+    "z": 6000,
+    "height": 313.33333333333337,
+    "width": 343.33333333333337,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "gauge",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fait_hospitalisation"
+                    }
+                  },
+                  "Property": "Taux global hospitalisation"
+                }
+              },
+              "queryRef": "fait_hospitalisation.Taux global hospitalisation",
+              "nativeQueryRef": "Taux global hospitalisation"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fait_hospitalisation"
+                  }
+                },
+                "Property": "Taux global hospitalisation"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

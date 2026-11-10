@@ -4,10 +4,10 @@
   "position": {
     "x": 1354.4939271255062,
     "y": 204.04858299595145,
-    "z": 7,
+    "z": 7000,
     "height": 219.59514170040487,
     "width": 466.39676113360326,
-    "tabOrder": 7
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -80,28 +80,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "775bea0d0880bbc93b84",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "fait_consultation"
-                  }
-                },
-                "Property": "id_consultation"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

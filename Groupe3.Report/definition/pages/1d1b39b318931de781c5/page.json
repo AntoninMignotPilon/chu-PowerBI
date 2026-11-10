@@ -145,5 +145,12 @@
         }
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "e1f316b97715129bc140",
+      "target": "d875b5f5b7c92878726a",
+      "type": "NoFilter"
+    }
+  ]
 }

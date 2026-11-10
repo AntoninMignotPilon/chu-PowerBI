@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "942e4eb2a007903b12bb",
+  "position": {
+    "x": 323.33333333333337,
+    "y": 710,
+    "z": 7002,
+    "height": 311.66666666666669,
+    "width": 983.33333333333337,
+    "tabOrder": 7002
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_temps"
+                    }
+                  },
+                  "Property": "libelle_mois"
+                }
+              },
+              "queryRef": "dim_temps.libelle_mois",
+              "nativeQueryRef": "libelle_mois",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fait_hospitalisation"
+                    }
+                  },
+                  "Property": "Hospitalisations"
+                }
+              },
+              "queryRef": "fait_hospitalisation.Hospitalisations",
+              "nativeQueryRef": "Hospitalisations"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dim_temps"
+                  }
+                },
+                "Property": "libelle_mois"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -7,6 +7,14 @@ table fait_hospitalisation
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		lineageTag: 65b2d3c7-c311-45bc-bfda-a4ae11801e6b
 
+	measure Hospitalisations = COUNTROWS(fait_hospitalisation)
+		formatString: 0
+		lineageTag: 864d6bc0-b84d-4236-8245-338d30119324
+
+	measure 'Patients hospitalisés' = DISTINCTCOUNT(fait_hospitalisation[id_patient])
+		formatString: 0
+		lineageTag: fbc08b5d-0c90-4ad4-93f9-b0ff0bda9ce9
+
 	column id_hospitalisation
 		dataType: int64
 		formatString: 0

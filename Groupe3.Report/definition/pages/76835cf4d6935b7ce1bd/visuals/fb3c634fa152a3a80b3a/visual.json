@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "fb3c634fa152a3a80b3a",
+  "position": {
+    "x": 1451.6666666666667,
+    "y": 430,
+    "z": 7000,
+    "height": 220,
+    "width": 371.66666666666669,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fait_hospitalisation"
+                    }
+                  },
+                  "Property": "Hospitalisations"
+                }
+              },
+              "queryRef": "fait_hospitalisation.Hospitalisations",
+              "nativeQueryRef": "Hospitalisations"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fait_hospitalisation"
+                  }
+                },
+                "Property": "Hospitalisations"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f11226aac00dac6184b4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fait_hospitalisation"
+              }
+            },
+            "Property": "Hospitalisations"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

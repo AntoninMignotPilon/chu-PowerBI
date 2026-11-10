@@ -4,10 +4,10 @@
   "position": {
     "x": 1354.9549549549549,
     "y": 467.02702702702703,
-    "z": 9,
+    "z": 9000,
     "height": 614,
     "width": 466,
-    "tabOrder": 9
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -189,25 +189,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "f984aa7d602933b71058",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "fait_consultation"
-                  }
-                },
-                "Property": "id_consultation"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

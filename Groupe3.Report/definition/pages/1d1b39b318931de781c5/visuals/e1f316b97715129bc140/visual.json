@@ -4,10 +4,10 @@
   "position": {
     "x": 322,
     "y": 204,
-    "z": 5,
+    "z": 5000,
     "height": 262.34817813765187,
     "width": 466.39676113360326,
-    "tabOrder": 5
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -57,85 +57,6 @@
                   "Value": "true"
                 }
               }
-            },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "dim_etablissement",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Contains": {
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d"
-                              }
-                            },
-                            "Property": "nom_etablissement"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'service de sante des armees'"
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
-                    }
-                  }
-                ]
-              }
-            },
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "dim_etablissement",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "d"
-                                }
-                              },
-                              "Property": "nom_etablissement"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'SERVICE DE SANTE DES ARMEES'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
             }
           }
         }
@@ -145,20 +66,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "3bf0d8ca60b9140a3130",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_etablissement"
-              }
-            },
-            "Property": "nom_etablissement"
-          }
-        },
-        "type": "Categorical"
-      },
       {
         "name": "faf0d79e6de5c9411ee3",
         "field": {

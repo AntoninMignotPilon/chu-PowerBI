@@ -4,10 +4,10 @@
   "position": {
     "x": 324,
     "y": 484,
-    "z": 10,
+    "z": 10000,
     "height": 596,
     "width": 466,
-    "tabOrder": 10
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "lineChart",
@@ -81,42 +81,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "62e07c942eca4e148abe",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_temps"
-              }
-            },
-            "Property": "annee"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "cc16168481a55386600e",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "fait_consultation"
-                  }
-                },
-                "Property": "id_consultation"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

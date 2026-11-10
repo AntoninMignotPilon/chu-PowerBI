@@ -48,6 +48,9 @@ table dim_temps
 		lineageTag: 026f8abc-f158-4d73-bbcc-64456a60f2ab
 		summarizeBy: none
 		sourceColumn: libelle_mois
+		sortByColumn: mois
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
