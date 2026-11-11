@@ -1,0 +1,111 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "16c698690c6542cea061",
+  "position": {
+    "x": 323.89057750759878,
+    "y": 96.2917933130699,
+    "z": 5001,
+    "height": 137.14285714285714,
+    "width": 496.048632218845,
+    "tabOrder": 5001
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fait_consultation"
+                    }
+                  },
+                  "Property": "Consultations"
+                }
+              },
+              "queryRef": "fait_consultation.Consultations",
+              "nativeQueryRef": "Total Consultations",
+              "displayName": "Total Consultations"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fait_consultation"
+                    }
+                  },
+                  "Property": "Professionnels actifs"
+                }
+              },
+              "queryRef": "fait_consultation.Professionnels actifs",
+              "nativeQueryRef": "Praticiens Actifs",
+              "displayName": "Praticiens Actifs"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fait_consultation"
+                    }
+                  },
+                  "Property": "Consultations par professionnel"
+                }
+              },
+              "queryRef": "fait_consultation.Consultations par professionnel",
+              "nativeQueryRef": "Moy. / Praticien",
+              "displayName": "Moy. / Praticien"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Minimal'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'📊 Chiffres Clés Praticiens'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "21D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "0764efeb953142028c7e",
+  "position": {
+    "x": 1380,
+    "y": 96.2917933130699,
+    "z": 5005,
+    "height": 983.70820668693,
+    "width": 516,
+    "tabOrder": 5005
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_professionnel"
+                    }
+                  },
+                  "Property": "profession"
+                }
+              },
+              "queryRef": "dim_professionnel.profession",
+              "nativeQueryRef": "Profession",
+              "displayName": "Profession"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_professionnel"
+                    }
+                  },
+                  "Property": "specialite"
+                }
+              },
+              "queryRef": "dim_professionnel.specialite",
+              "nativeQueryRef": "Spécialité",
+              "displayName": "Spécialité"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fait_consultation"
+                    }
+                  },
+                  "Property": "Consultations"
+                }
+              },
+              "queryRef": "fait_consultation.Consultations",
+              "nativeQueryRef": "Consultations",
+              "displayName": "Consultations"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fait_consultation"
+                    }
+                  },
+                  "Property": "Taux consultation professionnel"
+                }
+              },
+              "queryRef": "fait_consultation.Taux consultation professionnel",
+              "nativeQueryRef": "Taux CHU (%)",
+              "displayName": "Taux CHU (%)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fait_consultation"
+                  }
+                },
+                "Property": "Consultations"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Minimal'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'📋 Détail & Taux par Profession et Spécialité'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
