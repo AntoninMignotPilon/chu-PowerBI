@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "2b6c440574631542730c",
   "position": {
     "x": 324,
@@ -23,7 +23,7 @@
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "22pt",
-                      "color": "#0F172A"
+                      "color": "#0f172a"
                     }
                   }
                 ]

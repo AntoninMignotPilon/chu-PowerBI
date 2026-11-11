@@ -1,59 +1,65 @@
-table fait_deces
-	lineageTag: cafac6c9-27ff-48a1-932e-9967aeebae75
-
-	column id_deces
-		dataType: int64
-		formatString: 0
-		lineageTag: c4278e69-8865-411e-be93-ef4cae867af1
-		summarizeBy: sum
-		sourceColumn: id_deces
-
-		annotation SummarizationSetBy = Automatic
-
-	column tranche_age
-		dataType: string
-		lineageTag: eb289055-c301-4a99-a828-d3af170b79e0
-		summarizeBy: none
-		sourceColumn: tranche_age
-
-		annotation SummarizationSetBy = Automatic
-
-	column date_complete
-		dataType: dateTime
-		formatString: Long Date
-		lineageTag: 72a9392a-8a04-4ce5-ba87-2ad2b80b8520
-		summarizeBy: none
-		sourceColumn: date_complete
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
-	column id_localisation
-		dataType: string
-		lineageTag: 5918ebef-b886-49ae-92e8-8b8ab2db6f13
-		summarizeBy: none
-		sourceColumn: id_localisation
-
-		annotation SummarizationSetBy = Automatic
-
-	column annee
-		dataType: int64
-		formatString: 0
-		lineageTag: ba25d44f-ed89-49f7-9ab0-41c95a88eb6e
-		summarizeBy: sum
-		sourceColumn: annee
-
-		annotation SummarizationSetBy = Automatic
-
-	partition fait_deces = m
-		mode: import
-		source =
-				let
-				    Source = Odbc.DataSource("dsn=Hive Gold", [HierarchicalNavigation=true]),
-				    HIVE_Database = Source{[Name="HIVE",Kind="Database"]}[Data],
-				    gold_Schema = HIVE_Database{[Name="gold",Kind="Schema"]}[Data],
-				    fait_deces_Table = gold_Schema{[Name="fait_deces",Kind="Table"]}[Data]
-				in
-				    fait_deces_Table
-
+table fait_deces
+	lineageTag: cafac6c9-27ff-48a1-932e-9967aeebae75
+
+	measure 'Nombre de décès' = COUNTROWS(fait_deces)
+		formatString: #,##0
+		lineageTag: b0deces1-0001-4000-8000-000000000001
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_deces
+		dataType: int64
+		formatString: 0
+		lineageTag: c4278e69-8865-411e-be93-ef4cae867af1
+		summarizeBy: sum
+		sourceColumn: id_deces
+
+		annotation SummarizationSetBy = Automatic
+
+	column tranche_age
+		dataType: string
+		lineageTag: eb289055-c301-4a99-a828-d3af170b79e0
+		summarizeBy: none
+		sourceColumn: tranche_age
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_complete
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 72a9392a-8a04-4ce5-ba87-2ad2b80b8520
+		summarizeBy: none
+		sourceColumn: date_complete
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column id_localisation
+		dataType: string
+		lineageTag: 5918ebef-b886-49ae-92e8-8b8ab2db6f13
+		summarizeBy: none
+		sourceColumn: id_localisation
+
+		annotation SummarizationSetBy = Automatic
+
+	column annee
+		dataType: int64
+		formatString: 0
+		lineageTag: ba25d44f-ed89-49f7-9ab0-41c95a88eb6e
+		summarizeBy: sum
+		sourceColumn: annee
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fait_deces = m
+		mode: import
+		source =
+				let
+				    Source = Odbc.DataSource("dsn=Hive Gold", [HierarchicalNavigation=true]),
+				    HIVE_Database = Source{[Name="HIVE",Kind="Database"]}[Data],
+				    gold_Schema = HIVE_Database{[Name="gold",Kind="Schema"]}[Data],
+				    fait_deces_Table = gold_Schema{[Name="fait_deces",Kind="Table"]}[Data]
+				in
+				    fait_deces_Table
+

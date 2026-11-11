@@ -1,0 +1,123 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "475a5647048e47f2bd7c",
+  "position": {
+    "x": 1560,
+    "y": 586.2917933130699,
+    "z": 5005,
+    "height": 493.7082066869301,
+    "width": 340,
+    "tabOrder": 5005
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fait_deces"
+                    }
+                  },
+                  "Property": "tranche_age"
+                }
+              },
+              "queryRef": "fait_deces.tranche_age",
+              "nativeQueryRef": "Tranche d'Âge",
+              "displayName": "Tranche d'Âge"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fait_deces"
+                        }
+                      },
+                      "Property": "id_deces"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "Count(fait_deces.id_deces)",
+              "nativeQueryRef": "Décès",
+              "displayName": "Décès"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "fait_deces"
+                      }
+                    },
+                    "Property": "id_deces"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Minimal'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'📋 Détail par Tranche d''Âge'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

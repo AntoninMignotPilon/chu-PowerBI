@@ -1,2 +1,32 @@
 cultureInfo fr-FR
 
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dim_localisation.libelle_region": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_localisation",
+			          "ConceptualProperty": "libelle_region"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Région": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+
