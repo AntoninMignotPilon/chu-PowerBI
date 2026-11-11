@@ -3,9 +3,9 @@
   "name": "fcd736915709468ab412",
   "position": {
     "x": 323.19201995012469,
-    "y": 496.90773067331673,
+    "y": 367.63092269326683,
     "z": 5000,
-    "height": 583.09226932668332,
+    "height": 712.36907730673317,
     "width": 496.90773067331673,
     "tabOrder": 5000
   },
@@ -80,35 +80,6 @@
         "isDefaultSort": true
       }
     },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'📊 Classement des Régions par Décès'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "16D"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "objects": {
       "dataPoint": [
         {
@@ -179,6 +150,35 @@
                 }
               }
             ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'📊 Classement des Régions par Décès'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
           }
         }
       ]

@@ -57,35 +57,6 @@
         }
       }
     },
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'🗺️ Carte des Décès par Région'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "16D"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "objects": {
       "mapControls": [
         {
@@ -121,21 +92,21 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "5.42D"
+                  "Value": "5.04D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "46.42928815589124D"
+                  "Value": "46.435712155242214D"
                 }
               }
             },
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "2.2092400000000225D"
+                  "Value": "2.1626389959690187D"
                 }
               }
             },
@@ -285,6 +256,35 @@
                 }
               }
             ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'🗺️ Carte des Décès par Région'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
           }
         }
       ]

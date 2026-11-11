@@ -25,6 +25,27 @@ cultureInfo fr-FR
 			          }
 			        }
 			      ]
+			    },
+			    "fait_deces.tranche_age": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_deces",
+			          "ConceptualProperty": "tranche_age"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Tranche d'Âge": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  }
 			}
