@@ -4,5 +4,10 @@
   "displayName": "KPI 8 - Satisfaction par région (2020)",
   "displayOption": "FitToPage",
   "height": 1080,
-  "width": 1920
+  "width": 1920,
+  "pageBinding": {
+    "name": "1f7d9604684c8e956027",
+    "type": "Default",
+    "parameters": []
+  }
 }
