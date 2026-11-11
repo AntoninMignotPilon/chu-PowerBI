@@ -17,6 +17,13 @@ table dim_patient
 
 		annotation SummarizationSetBy = Automatic
 
+	column sexe_libelle = SWITCH(dim_patient[sexe], "F", "Femme", "M", "Homme", "Non renseigné")
+		dataType: string
+		lineageTag: a1b2c3d4-0001-4000-8000-000000000001
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dim_patient = m
 		mode: import
 		source =
@@ -24,7 +31,8 @@ table dim_patient
 				    Source = Odbc.DataSource("dsn=Hive Gold", [HierarchicalNavigation=true]),
 				    HIVE_Database = Source{[Name="HIVE",Kind="Database"]}[Data],
 				    gold_Schema = HIVE_Database{[Name="gold",Kind="Schema"]}[Data],
-				    dim_patient_Table = gold_Schema{[Name="dim_patient",Kind="Table"]}[Data]
+				    dim_patient_Table = gold_Schema{[Name="dim_patient",Kind="Table"]}[Data],
+				    Sexe_nettoye = Table.TransformColumns(dim_patient_Table, {{"sexe", each if _ = null then null else Text.Upper(Text.Trim(Text.Clean(_))), type text}})
 				in
-				    dim_patient_Table
+				    Sexe_nettoye
 

@@ -26,6 +26,7 @@ ref table fait_consultation
 ref table fait_deces
 ref table fait_hospitalisation
 ref table fait_satisfaction
+ref table dim_tranche_age
 
 ref cultureInfo fr-FR
 

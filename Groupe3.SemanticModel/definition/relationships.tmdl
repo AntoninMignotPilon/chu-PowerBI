@@ -59,3 +59,11 @@ relationship 8ed4dc91-89a5-0383-5bc9-a7ca080ec9a4
 	fromColumn: dim_etablissement.id_localisation
 	toColumn: dim_localisation.code_commune_insee
 
+relationship c9253458-ce32-4f18-be57-a71f4e1844d5
+	fromColumn: fait_hospitalisation.tranche_age
+	toColumn: dim_tranche_age.tranche_age
+
+relationship a668d6ab-52b1-46f7-86d1-3a1e09e5f861
+	fromColumn: fait_consultation.tranche_age
+	toColumn: dim_tranche_age.tranche_age
+

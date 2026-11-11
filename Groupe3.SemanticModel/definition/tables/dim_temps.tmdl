@@ -81,6 +81,32 @@ table dim_temps
 
 		annotation SummarizationSetBy = Automatic
 
+	column annee_trimestre = dim_temps[annee] & " T" & dim_temps[trimestre]
+		dataType: string
+		lineageTag: e35fa5c2-d0a0-4fa2-8bfa-490a41c4813b
+		summarizeBy: none
+		sortByColumn: ordre_trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column ordre_trimestre = dim_temps[annee] * 10 + dim_temps[trimestre]
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2c5264b5-f3a2-4edc-a7c0-ac98fbab6cc3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column periode_hospitalisation = dim_temps[date_complete] >= MIN(fait_hospitalisation[date_complete]) && dim_temps[date_complete] <= MAX(fait_hospitalisation[date_complete])
+		dataType: boolean
+		isHidden
+		formatString: """Oui"";""Oui"";""Non"""
+		lineageTag: 7c85f469-2ff6-4ce9-a9de-0b3cfc3cdd66
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dim_temps = m
 		mode: import
 		source =

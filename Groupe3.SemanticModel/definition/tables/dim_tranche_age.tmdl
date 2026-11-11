@@ -1,0 +1,30 @@
+table dim_tranche_age
+	lineageTag: 59750943-71d8-4d49-8ead-b57cf1ba5fd9
+
+	column tranche_age
+		dataType: string
+		lineageTag: 8cac7b39-e5a3-4cbe-a2e0-d983dc7b74d1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [tranche_age]
+		sortByColumn: ordre
+
+		annotation SummarizationSetBy = Automatic
+
+	column ordre
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7dedf854-5168-4e85-b5aa-4e474f64c8f9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ordre]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_tranche_age = calculated
+		mode: import
+		source = DATATABLE("tranche_age", STRING, "ordre", INTEGER, {{"0-17", 1}, {"18-39", 2}, {"40-64", 3}, {"65-79", 4}, {"80+", 5}})
+
+	annotation PBI_Id = a3d9cadb5e9741ce874079b88a48d46b
+

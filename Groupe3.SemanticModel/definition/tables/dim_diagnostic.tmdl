@@ -17,6 +17,13 @@ table dim_diagnostic
 
 		annotation SummarizationSetBy = Automatic
 
+	column chapitre_cim10 = SWITCH(LEFT(dim_diagnostic[code_cim10], 1), "M", "Ostéo-articulaire & muscles (M)", "O", "Grossesse & accouchement (O)", "S", "Traumatismes localisés (S)", "V", "Accidents de transport (V)", "T", "Traumatismes multiples & intox. (T)", "Z", "Suivi & motifs de recours (Z)", "Q", "Malformations congénitales (Q)", "K", "Appareil digestif (K)", "D", "Tumeurs bénignes & sang (D)", "N", "Appareil génito-urinaire (N)", "F", "Troubles mentaux (F)", "C", "Tumeurs malignes / Cancers (C)", "H", "Ophtalmologie & ORL (H)", "I", "Appareil circulatoire (I)", "Y", "Complications médicales (Y)", "E", "Endocrinologie & nutrition (E)", "B", "Infections virales & mycoses (B)", "G", "Système nerveux (G)", "A", "Infections bactériennes & paras. (A)", "L", "Dermatologie (L)", "R", "Symptômes & signes cliniques (R)", "P", "Périnatalité (P)", "J", "Appareil respiratoire (J)", "U", "Codes d'urgence & COVID (U)", "W", "Chutes & accidents mécaniques (W)", "X", "Brûlures & expositions (X)", "Autres diagnostics")
+		dataType: string
+		lineageTag: d1a6c110-0001-4000-8000-000000000001
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dim_diagnostic = m
 		mode: import
 		source =

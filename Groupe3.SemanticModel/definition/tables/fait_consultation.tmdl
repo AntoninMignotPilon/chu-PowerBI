@@ -1,109 +1,117 @@
-table fait_consultation
-	lineageTag: 8caf33b1-f6e7-40d8-a4d0-19330523202d
-
-	measure 'Taux consultation établissement' = DIVIDE(COUNTROWS(fait_consultation), CALCULATE(COUNTROWS(fait_consultation), REMOVEFILTERS(dim_etablissement)))
-		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		lineageTag: 987d765a-4a84-4fa1-97cb-01b150aeca9c
-
-	measure 'Taux consultation diagnostic' =
-			
-			DIVIDE(COUNTROWS(fait_consultation), CALCULATE(COUNTROWS(fait_consultation), REMOVEFILTERS(dim_diagnostic)))
-		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		lineageTag: d9eaba52-7a39-465f-8ff0-af2e725c1875
-
-	measure Consultations = COUNTROWS(fait_consultation)
-		formatString: 0
-		lineageTag: 4b73afd9-9757-4917-a36c-b710897058bb
-
-	measure 'Taux consultation professionnel' = DIVIDE(COUNTROWS(fait_consultation), CALCULATE(COUNTROWS(fait_consultation), REMOVEFILTERS(dim_professionnel)))
-		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		lineageTag: b0prof01-0001-4000-8000-000000000001
-
-	measure 'Professionnels actifs' = DISTINCTCOUNT(fait_consultation[id_professionnel])
-		formatString: #,##0
-		lineageTag: b0prof02-0001-4000-8000-000000000002
-
-	measure 'Consultations par professionnel' = DIVIDE([Consultations], [Professionnels actifs])
-		formatString: #,##0.0
-		lineageTag: b0prof03-0001-4000-8000-000000000003
-
-	column id_consultation
-		dataType: int64
-		formatString: 0
-		lineageTag: d1c0fd33-4cfe-4de3-9c40-146a21318ba4
-		summarizeBy: sum
-		sourceColumn: id_consultation
-
-		annotation SummarizationSetBy = Automatic
-
-	column tranche_age
-		dataType: string
-		lineageTag: aa68d7d1-3fc3-4f4c-9e0b-c007c4fa5f38
-		summarizeBy: none
-		sourceColumn: tranche_age
-
-		annotation SummarizationSetBy = Automatic
-
-	column id_professionnel
-		dataType: string
-		lineageTag: 92e3a2ed-fe43-48bb-a928-629de9eb9ecc
-		summarizeBy: none
-		sourceColumn: id_professionnel
-
-		annotation SummarizationSetBy = Automatic
-
-	column id_patient
-		dataType: string
-		lineageTag: ab8aebdd-1001-4aa8-b032-217ba264a124
-		summarizeBy: none
-		sourceColumn: id_patient
-
-		annotation SummarizationSetBy = Automatic
-
-	column id_diagnostic
-		dataType: string
-		lineageTag: ae5baf64-19fe-425c-bb9b-8c2ef5df1cbd
-		summarizeBy: none
-		sourceColumn: id_diagnostic
-
-		annotation SummarizationSetBy = Automatic
-
-	column id_etablissement
-		dataType: string
-		lineageTag: a994a5ce-7a6d-442b-b2c0-31b31c9f67f4
-		summarizeBy: none
-		sourceColumn: id_etablissement
-
-		annotation SummarizationSetBy = Automatic
-
-	column date_complete
-		dataType: dateTime
-		formatString: Long Date
-		lineageTag: 701bb43b-bec5-40e7-82a9-c6e9fc543744
-		summarizeBy: none
-		sourceColumn: date_complete
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
-	column annee
-		dataType: int64
-		formatString: 0
-		lineageTag: dac302dc-555f-47e3-8d71-06c3f448749d
-		summarizeBy: sum
-		sourceColumn: annee
-
-		annotation SummarizationSetBy = Automatic
-
-	partition fait_consultation = m
-		mode: import
-		source =
-				let
-				    Source = Odbc.DataSource("dsn=Hive Gold", [HierarchicalNavigation=true]),
-				    HIVE_Database = Source{[Name="HIVE",Kind="Database"]}[Data],
-				    gold_Schema = HIVE_Database{[Name="gold",Kind="Schema"]}[Data],
-				    fait_consultation_Table = gold_Schema{[Name="fait_consultation",Kind="Table"]}[Data]
-				in
-				    fait_consultation_Table
-
+table fait_consultation
+	lineageTag: 8caf33b1-f6e7-40d8-a4d0-19330523202d
+
+	measure 'Taux consultation établissement' = DIVIDE(COUNTROWS(fait_consultation), CALCULATE(COUNTROWS(fait_consultation), REMOVEFILTERS(dim_etablissement)))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 987d765a-4a84-4fa1-97cb-01b150aeca9c
+
+	measure 'Taux consultation diagnostic' =
+			
+			
+			
+			DIVIDE(COUNTROWS(fait_consultation), CALCULATE(COUNTROWS(fait_consultation), REMOVEFILTERS(dim_diagnostic)))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: d9eaba52-7a39-465f-8ff0-af2e725c1875
+
+	measure Consultations = COUNTROWS(fait_consultation)
+		formatString: 0
+		lineageTag: 4b73afd9-9757-4917-a36c-b710897058bb
+
+	measure 'Taux consultation professionnel' = DIVIDE(COUNTROWS(fait_consultation), CALCULATE(COUNTROWS(fait_consultation), REMOVEFILTERS(dim_professionnel)))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: b0prof01-0001-4000-8000-000000000001
+
+	measure 'Professionnels actifs' = DISTINCTCOUNT(fait_consultation[id_professionnel])
+		formatString: #,##0
+		lineageTag: b0prof02-0001-4000-8000-000000000002
+
+	measure 'Consultations par professionnel' = DIVIDE([Consultations], [Professionnels actifs])
+		formatString: #,##0.0
+		lineageTag: b0prof03-0001-4000-8000-000000000003
+
+	column id_consultation
+		dataType: int64
+		formatString: 0
+		lineageTag: d1c0fd33-4cfe-4de3-9c40-146a21318ba4
+		summarizeBy: sum
+		sourceColumn: id_consultation
+
+		annotation SummarizationSetBy = Automatic
+
+	column tranche_age
+		dataType: string
+		lineageTag: aa68d7d1-3fc3-4f4c-9e0b-c007c4fa5f38
+		summarizeBy: none
+		sourceColumn: tranche_age
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_professionnel
+		dataType: string
+		lineageTag: 92e3a2ed-fe43-48bb-a928-629de9eb9ecc
+		summarizeBy: none
+		sourceColumn: id_professionnel
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_patient
+		dataType: string
+		lineageTag: ab8aebdd-1001-4aa8-b032-217ba264a124
+		summarizeBy: none
+		sourceColumn: id_patient
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_diagnostic
+		dataType: string
+		lineageTag: ae5baf64-19fe-425c-bb9b-8c2ef5df1cbd
+		summarizeBy: none
+		sourceColumn: id_diagnostic
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_etablissement
+		dataType: string
+		lineageTag: a994a5ce-7a6d-442b-b2c0-31b31c9f67f4
+		summarizeBy: none
+		sourceColumn: id_etablissement
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_complete
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 701bb43b-bec5-40e7-82a9-c6e9fc543744
+		summarizeBy: none
+		sourceColumn: date_complete
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column annee
+		dataType: int64
+		formatString: 0
+		lineageTag: dac302dc-555f-47e3-8d71-06c3f448749d
+		summarizeBy: sum
+		sourceColumn: annee
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fait_consultation = m
+		mode: import
+		source =
+				let
+				
+				    Source = Odbc.DataSource("dsn=Hive Gold", [HierarchicalNavigation=true]),
+				
+				    HIVE_Database = Source{[Name="HIVE",Kind="Database"]}[Data],
+				
+				    gold_Schema = HIVE_Database{[Name="gold",Kind="Schema"]}[Data],
+				
+				    fait_consultation_Table = gold_Schema{[Name="fait_consultation",Kind="Table"]}[Data]
+				
+				in
+				
+				    fait_consultation_Table
+

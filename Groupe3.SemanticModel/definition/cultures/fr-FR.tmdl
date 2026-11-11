@@ -46,6 +46,673 @@ cultureInfo fr-FR
 			          }
 			        }
 			      ]
+			    },
+			    "dim_professionnel.profession": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_professionnel",
+			          "ConceptualProperty": "profession"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Profession": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_professionnel.specialite": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_professionnel",
+			          "ConceptualProperty": "specialite"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Spécialité": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_consultation.consultations": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_consultation",
+			          "ConceptualProperty": "Consultations"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Consultations": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Total Consultations": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_consultation.taux_consultation_professionnel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_consultation",
+			          "ConceptualProperty": "Taux consultation professionnel"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Taux CHU (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Taux (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_consultation.professionnels_actifs": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_consultation",
+			          "ConceptualProperty": "Professionnels actifs"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Praticiens Actifs": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_consultation.consultations_par_professionnel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_consultation",
+			          "ConceptualProperty": "Consultations par professionnel"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Moy. / Praticien": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.taux_pour_1000_consultations": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Taux pour 1000 consultations"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Hospitalisations pour 1 000 consultations": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Hosp. / 1 000 consult.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.hospitalisations": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Hospitalisations"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Séjours": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Séjours hospitaliers": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.écart_au_taux_moyen": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Écart au taux moyen"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Écart au taux moyen": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.famille_au_taux_le_plus_élevé": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Famille au taux le plus élevé"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Famille au taux le plus élevé": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.évolution_dernière_année": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Évolution dernière année"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Évolution du volume sur 1 an": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.part_des_hospitalisations": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Part des hospitalisations"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Part des séjours": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.famille_la_plus_fréquente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Famille la plus fréquente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Famille la plus fréquente": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.écart_femmes_hommes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Écart Femmes Hommes"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "fait_hospitalisation.taux_femmes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Taux Femmes"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "fait_hospitalisation.taux_hommes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Taux Hommes"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "fait_hospitalisation.taux_patients_hospitalisés": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Taux patients hospitalisés"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Taux d'hospitalisation du profil": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Profil sélectionné": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Taux d'hospitalisation": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.patients_hospitalisés": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Patients hospitalisés"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Patients hospitalisés": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.patients_vus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Patients vus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Patients vus en consultation": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Patients vus": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.hommes_pyramide": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Hommes (pyramide)"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "fait_hospitalisation.hospitalisations_femmes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Hospitalisations Femmes"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "fait_hospitalisation.tranche_la_plus_exposée": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Tranche la plus exposée"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "fait_hospitalisation.hospitalisations_hommes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Hospitalisations Hommes"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "dim_temps.annee": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_temps",
+			          "ConceptualProperty": "annee"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "dim_diagnostic.chapitre_cim10": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_diagnostic",
+			          "ConceptualProperty": "chapitre_cim10"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Famille CIM-10": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_tranche_age.tranche_age": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_tranche_age",
+			          "ConceptualProperty": "tranche_age"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Tranche d'âge": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_patient.sexe_libelle": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_patient",
+			          "ConceptualProperty": "sexe_libelle"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sexe": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.part_du_profil_dans_les_séjours": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Part du profil dans les séjours"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Part du profil dans les séjours": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.part_des_séjours_du_profil": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Part des séjours du profil"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Part des séjours": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.taux_ensemble_des_patients": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Taux ensemble des patients"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ensemble des patients": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.écart_vs_ensemble_des_patients": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Écart vs ensemble des patients"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Écart vs ensemble des patients": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.répartition_femmes_hommes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Répartition Femmes Hommes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Répartition F/H dans la famille": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_temps.annee_trimestre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_temps",
+			          "ConceptualProperty": "annee_trimestre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Trimestre": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  }
 			}

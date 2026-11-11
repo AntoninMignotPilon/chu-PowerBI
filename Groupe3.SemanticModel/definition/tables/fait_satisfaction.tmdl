@@ -55,6 +55,14 @@ table fait_satisfaction
 
 		annotation SummarizationSetBy = Automatic
 
+	column id_localisation
+		dataType: string
+		lineageTag: e2248deb-3392-4dfe-bb5c-0453240a2889
+		summarizeBy: none
+		sourceColumn: id_localisation
+
+		annotation SummarizationSetBy = Automatic
+
 	partition fait_satisfaction = m
 		mode: import
 		source =
