@@ -4,10 +4,10 @@
   "position": {
     "x": 820,
     "y": 71.666666666666671,
-    "z": 3001,
+    "z": 4000,
     "height": 1008.3333333333334,
     "width": 1076.6666666666667,
-    "tabOrder": 3001
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "azureMap",
@@ -23,11 +23,11 @@
                       "Entity": "dim_localisation"
                     }
                   },
-                  "Property": "libelle_region"
+                  "Property": "region_france"
                 }
               },
-              "queryRef": "dim_localisation.libelle_region",
-              "nativeQueryRef": "libelle_region",
+              "queryRef": "dim_localisation.region_france",
+              "nativeQueryRef": "region_france",
               "active": true
             }
           ]
@@ -106,7 +106,7 @@
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "3.24016000000006D"
+                  "Value": "2.2092400000000225D"
                 }
               }
             },
@@ -373,6 +373,7 @@
             }
           ]
         },
+        "howCreated": "User",
         "objects": {
           "general": [
             {
@@ -388,25 +389,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "08bd8022a4a89d038700",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "fait_satisfaction"
-                  }
-                },
-                "Property": "score_global"
-              }
-            },
-            "Function": 1
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

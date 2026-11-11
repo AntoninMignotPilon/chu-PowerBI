@@ -27,8 +27,8 @@ table dim_localisation
 
 	column libelle_region
 		dataType: string
-		dataCategory: StateOrProvince
 		lineageTag: f198e006-6028-43f0-8aa7-2c5217a4a45c
+		dataCategory: StateOrProvince
 		summarizeBy: none
 		sourceColumn: libelle_region
 
@@ -36,8 +36,8 @@ table dim_localisation
 
 	column region_france = IF(dim_localisation[libelle_region] = "Bretagne", "Région Bretagne, France", dim_localisation[libelle_region] & ", France")
 		dataType: string
-		dataCategory: StateOrProvince
 		lineageTag: 8f44d187-51a2-4a0b-93bf-4375b42674e2
+		dataCategory: StateOrProvince
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic

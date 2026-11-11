@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "87e30b7eec47134e3967",
   "position": {
     "x": 1354.9549549549549,
@@ -174,20 +174,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "e8fc8b20290e7b0a9be8",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fait_consultation"
-              }
-            },
-            "Property": "Consultations"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

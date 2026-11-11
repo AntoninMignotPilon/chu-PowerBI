@@ -5,6 +5,81 @@
   "displayOption": "FitToPage",
   "height": 1080,
   "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "75ceda03e094aa023911",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "dim_temps"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "date_complete"
+                  }
+                },
+                "Hierarchy": "Hiérarchie de dates"
+              }
+            },
+            "Level": "Année"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "dim_temps",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "date_complete"
+                            }
+                          },
+                          "Hierarchy": "Hiérarchie de dates"
+                        }
+                      },
+                      "Level": "Année"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "2020L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
   "pageBinding": {
     "name": "1f7d9604684c8e956027",
     "type": "Default",

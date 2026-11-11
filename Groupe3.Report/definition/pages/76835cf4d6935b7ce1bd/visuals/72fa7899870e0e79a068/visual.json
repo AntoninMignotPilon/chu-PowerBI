@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "72fa7899870e0e79a068",
   "position": {
     "x": 1086.6666666666667,
@@ -52,5 +52,23 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "462f1f16101c3928b142",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fait_hospitalisation"
+              }
+            },
+            "Property": "Taux global hospitalisation"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

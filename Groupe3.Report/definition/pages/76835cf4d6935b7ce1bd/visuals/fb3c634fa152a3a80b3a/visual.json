@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "fb3c634fa152a3a80b3a",
   "position": {
     "x": 1451.6666666666667,
@@ -52,23 +52,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f11226aac00dac6184b4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fait_hospitalisation"
-              }
-            },
-            "Property": "Hospitalisations"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "b69e34508d6c35080472",
   "position": {
-    "x": 323.33333333333337,
-    "y": 96.666666666666671,
-    "z": 3002,
-    "height": 983.33333333333337,
-    "width": 496.66666666666669,
-    "tabOrder": 3002
+    "x": 323.19201995012469,
+    "y": 496.90773067331673,
+    "z": 5000,
+    "height": 583.09226932668332,
+    "width": 496.90773067331673,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "barChart",
@@ -23,11 +23,11 @@
                       "Entity": "dim_localisation"
                     }
                   },
-                  "Property": "libelle_region"
+                  "Property": "region_france"
                 }
               },
-              "queryRef": "dim_localisation.libelle_region",
-              "nativeQueryRef": "libelle_region",
+              "queryRef": "dim_localisation.region_france",
+              "nativeQueryRef": "region_france",
               "active": true
             }
           ]
@@ -160,5 +160,42 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "992431f085e93845434d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fait_satisfaction"
+                  }
+                },
+                "Property": "score_global"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "32239415174c2e51a361",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_localisation"
+              }
+            },
+            "Property": "region_france"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

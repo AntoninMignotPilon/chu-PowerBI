@@ -1,0 +1,209 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "58bf84b88398d239ee06",
+  "position": {
+    "x": 323.89057750759878,
+    "y": 96.2917933130699,
+    "z": 5001,
+    "height": 137.14285714285714,
+    "width": 496.048632218845,
+    "tabOrder": 5001
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fait_satisfaction"
+                        }
+                      },
+                      "Property": "score_global"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(fait_satisfaction.score_global)",
+              "nativeQueryRef": "Moyenne France",
+              "displayName": "Moyenne France"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fait_satisfaction"
+                        }
+                      },
+                      "Property": "score_global"
+                    }
+                  },
+                  "Function": 7
+                }
+              },
+              "queryRef": "Sum(fait_satisfaction.score_global)1",
+              "nativeQueryRef": "Écart-type",
+              "displayName": "Écart-type"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fait_satisfaction"
+                        }
+                      },
+                      "Property": "nb_repondants"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(fait_satisfaction.nb_repondants)",
+              "nativeQueryRef": "Répondants",
+              "displayName": "Répondants"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "fait_satisfaction"
+                      }
+                    },
+                    "Property": "score_global"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Minimal'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'📊 Chiffres Clés France'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "21D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cde114431a913b420b6b",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fait_satisfaction"
+                  }
+                },
+                "Property": "score_global"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "08231916da76dc080690",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fait_satisfaction"
+                  }
+                },
+                "Property": "score_global"
+              }
+            },
+            "Function": 7
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bbbb8b402032a613e47b",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fait_satisfaction"
+                  }
+                },
+                "Property": "nb_repondants"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
