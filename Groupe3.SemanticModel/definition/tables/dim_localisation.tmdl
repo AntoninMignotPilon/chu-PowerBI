@@ -27,6 +27,7 @@ table dim_localisation
 
 	column libelle_region
 		dataType: string
+		dataCategory: StateOrProvince
 		lineageTag: f198e006-6028-43f0-8aa7-2c5217a4a45c
 		summarizeBy: none
 		sourceColumn: libelle_region
