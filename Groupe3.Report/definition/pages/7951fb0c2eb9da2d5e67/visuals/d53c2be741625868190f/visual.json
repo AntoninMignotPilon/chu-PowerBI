@@ -22,7 +22,7 @@
                     "value": "Taux d'hospitalisation par sexe et par âge",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "20pt",
+                      "fontSize": "22pt",
                       "color": "#0F172A"
                     }
                   }
@@ -33,7 +33,7 @@
                   {
                     "value": "Choisissez un sexe et/ou une tranche d'âge : toute la page décrit ce profil de patients. Taux = patients hospitalisés / patients vus en consultation · sur la période choisie",
                     "textStyle": {
-                      "fontSize": "11pt",
+                      "fontSize": "12pt",
                       "color": "#605E5C"
                     }
                   }

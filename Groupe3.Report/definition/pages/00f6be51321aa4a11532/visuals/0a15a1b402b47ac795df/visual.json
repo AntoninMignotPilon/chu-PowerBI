@@ -3,7 +3,7 @@
   "name": "0a15a1b402b47ac795df",
   "position": {
     "x": 641.6,
-    "y": 192,
+    "y": 240,
     "z": 5006,
     "height": 112,
     "width": 301.6,
@@ -41,7 +41,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "22D"
+                  "Value": "28D"
                 }
               }
             },
@@ -60,6 +60,13 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -140,6 +147,17 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F172A'"
+                    }
+                  }
                 }
               }
             }

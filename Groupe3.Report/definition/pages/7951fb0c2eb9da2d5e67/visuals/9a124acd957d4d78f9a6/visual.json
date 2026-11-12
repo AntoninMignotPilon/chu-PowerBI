@@ -5,7 +5,7 @@
     "x": 324,
     "y": 104,
     "z": 5001,
-    "height": 72,
+    "height": 120,
     "width": 300,
     "tabOrder": 5001
   },
@@ -114,6 +114,17 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F172A'"
+                    }
+                  }
                 }
               }
             }

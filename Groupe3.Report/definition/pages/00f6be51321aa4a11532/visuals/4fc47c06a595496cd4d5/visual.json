@@ -22,7 +22,7 @@
                     "value": "Taux d'hospitalisation des patients par rapport à des diagnostics sur une période donnée",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "20pt",
+                      "fontSize": "22pt",
                       "color": "#0F172A"
                     }
                   }
@@ -33,7 +33,7 @@
                   {
                     "value": "Pour quelles pathologies une consultation débouche-t-elle le plus souvent sur une hospitalisation ? Taux = hospitalisations pour 1 000 consultations du même diagnostic · sur la période choisie",
                     "textStyle": {
-                      "fontSize": "11pt",
+                      "fontSize": "12pt",
                       "color": "#605E5C"
                     }
                   }
