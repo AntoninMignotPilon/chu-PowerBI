@@ -1,0 +1,26 @@
+{
+  "name": "CHU Groupe 3",
+  "dataColors": ["#1F5FAD", "#C4610F", "#0E7C86", "#A19F9D", "#0F172A", "#6B8FC7", "#E0A060", "#5FB0B6"],
+  "background": "#FFFFFF",
+  "foreground": "#0F172A",
+  "tableAccent": "#1F5FAD",
+  "textClasses": {
+    "callout": { "fontSize": 28, "color": "#1F5FAD" },
+    "title": { "fontSize": 14, "color": "#0F172A" },
+    "header": { "fontSize": 12, "color": "#0F172A" },
+    "label": { "fontSize": 10, "color": "#605E5C" }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "show": true, "color": { "solid": { "color": "#FFFFFF" } }, "transparency": 0 }],
+        "border": [{ "show": true, "color": { "solid": { "color": "#E1DFDD" } }, "radius": 8 }],
+        "dropShadow": [{ "show": false }],
+        "title": [{ "show": true, "fontSize": 14, "bold": true, "fontColor": { "solid": { "color": "#0F172A" } } }]
+      }
+    },
+    "textbox": { "*": { "background": [{ "show": false }], "border": [{ "show": false }] } },
+    "shape": { "*": { "background": [{ "show": false }], "border": [{ "show": false }] } },
+    "pageNavigator": { "*": { "background": [{ "show": false }], "border": [{ "show": false }] } }
+  }
+}
