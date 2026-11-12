@@ -23,7 +23,18 @@
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "22pt",
-                      "color": "#0f172a"
+                      "color": "#0F172A"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Évaluation de l'expérience patient et scores moyens de satisfaction régionale",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#605E5C"
                     }
                   }
                 ]
@@ -33,6 +44,47 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   }
 }

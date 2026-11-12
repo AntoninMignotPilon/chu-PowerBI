@@ -658,19 +658,7 @@ cultureInfo fr-FR
 			          "ConceptualProperty": "Écart vs ensemble des patients"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Écart vs ensemble des patients": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "fait_hospitalisation.répartition_femmes_hommes": {
 			      "Definition": {

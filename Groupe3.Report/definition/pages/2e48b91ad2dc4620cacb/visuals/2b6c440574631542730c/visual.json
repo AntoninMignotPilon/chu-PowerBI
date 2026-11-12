@@ -19,11 +19,22 @@
               {
                 "textRuns": [
                   {
-                    "value": "Nombre de décès par localisation (région) sur l'année 2019",
+                    "value": "Nombre de décès par région sur l'année 2019",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "22pt",
-                      "color": "#0f172a"
+                      "color": "#0F172A"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Répartition géographique et analyse de la mortalité par tranche d'âge",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#605E5C"
                     }
                   }
                 ]
@@ -33,6 +44,47 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   }
 }
