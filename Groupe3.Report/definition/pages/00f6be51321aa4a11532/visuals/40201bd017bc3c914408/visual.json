@@ -3,9 +3,9 @@
   "name": "40201bd017bc3c914408",
   "position": {
     "x": 16,
-    "y": 112,
+    "y": 168,
     "z": 2000,
-    "height": 512,
+    "height": 136,
     "width": 268,
     "tabOrder": 2000
   },
@@ -194,6 +194,61 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "pages": [
+        {
+          "properties": {
+            "showByDefault": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "showPage": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "1d1b39b318931de781c5"
+          }
+        },
+        {
+          "properties": {
+            "showPage": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "76835cf4d6935b7ce1bd"
+          }
+        },
+        {
+          "properties": {
+            "showPage": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "1a04bc95366fb3dbe862"
           }
         }
       ]
