@@ -23,12 +23,12 @@
                       "Entity": "fait_hospitalisation"
                     }
                   },
-                  "Property": "Famille la plus fréquente"
+                  "Property": "Diagnostic le plus fréquent"
                 }
               },
-              "queryRef": "fait_hospitalisation.Famille la plus fréquente",
-              "nativeQueryRef": "Famille la plus fréquente",
-              "displayName": "Famille la plus fréquente"
+              "queryRef": "fait_hospitalisation.Diagnostic le plus fréquent",
+              "nativeQueryRef": "Diagnostic le plus fréquent",
+              "displayName": "Diagnostic le plus fréquent"
             }
           ]
         }
@@ -132,7 +132,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Famille la plus fréquente'"
+                  "Value": "'Diagnostic le plus fréquent'"
                 }
               }
             },

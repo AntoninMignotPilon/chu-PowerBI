@@ -273,19 +273,7 @@ cultureInfo fr-FR
 			          "ConceptualProperty": "Famille au taux le plus élevé"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Famille au taux le plus élevé": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "fait_hospitalisation.évolution_dernière_année": {
 			      "Definition": {
@@ -336,19 +324,7 @@ cultureInfo fr-FR
 			          "ConceptualProperty": "Famille la plus fréquente"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Famille la plus fréquente": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "fait_hospitalisation.écart_femmes_hommes": {
 			      "Definition": {
@@ -522,19 +498,7 @@ cultureInfo fr-FR
 			          "ConceptualProperty": "chapitre_cim10"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Famille CIM-10": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "dim_tranche_age.tranche_age": {
 			      "Definition": {
@@ -660,7 +624,7 @@ cultureInfo fr-FR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Répartition F/H dans la famille": {
+			          "Répartition F/H dans le diagnostic": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -682,6 +646,69 @@ cultureInfo fr-FR
 			      "Terms": [
 			        {
 			          "Trimestre": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.diagnostic_au_taux_le_plus_élevé": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Diagnostic au taux le plus élevé"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Diagnostic au taux le plus élevé": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fait_hospitalisation.diagnostic_le_plus_fréquent": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fait_hospitalisation",
+			          "ConceptualProperty": "Diagnostic le plus fréquent"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Diagnostic le plus fréquent": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_diagnostic.libelle_diagnostic": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_diagnostic",
+			          "ConceptualProperty": "libelle_diagnostic"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Diagnostic": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

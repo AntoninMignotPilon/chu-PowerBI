@@ -23,12 +23,12 @@
                       "Entity": "fait_hospitalisation"
                     }
                   },
-                  "Property": "Famille au taux le plus élevé"
+                  "Property": "Diagnostic au taux le plus élevé"
                 }
               },
-              "queryRef": "fait_hospitalisation.Famille au taux le plus élevé",
-              "nativeQueryRef": "Famille au taux le plus élevé",
-              "displayName": "Famille au taux le plus élevé"
+              "queryRef": "fait_hospitalisation.Diagnostic au taux le plus élevé",
+              "nativeQueryRef": "Diagnostic au taux le plus élevé",
+              "displayName": "Diagnostic au taux le plus élevé"
             }
           ]
         }
@@ -132,7 +132,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Famille au taux le plus élevé'"
+                  "Value": "'Diagnostic au taux le plus élevé'"
                 }
               }
             },

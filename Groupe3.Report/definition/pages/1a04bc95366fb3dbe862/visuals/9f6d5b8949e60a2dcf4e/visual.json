@@ -23,7 +23,7 @@
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "22pt",
-                      "color": "#0F172A"
+                      "color": "#0f172a"
                     }
                   }
                 ]
@@ -34,7 +34,7 @@
                     "value": "Répartition de l'activité médicale et taux de consultation par métier et spécialité",
                     "textStyle": {
                       "fontSize": "12pt",
-                      "color": "#605E5C"
+                      "color": "#605e5c"
                     }
                   }
                 ]
@@ -44,7 +44,6 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "background": [
         {
@@ -85,6 +84,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

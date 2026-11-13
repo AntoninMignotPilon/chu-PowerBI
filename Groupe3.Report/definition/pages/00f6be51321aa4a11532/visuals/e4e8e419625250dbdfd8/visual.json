@@ -23,13 +23,13 @@
                       "Entity": "dim_diagnostic"
                     }
                   },
-                  "Property": "chapitre_cim10"
+                  "Property": "libelle_diagnostic"
                 }
               },
-              "queryRef": "dim_diagnostic.chapitre_cim10",
-              "nativeQueryRef": "Famille CIM-10",
+              "queryRef": "dim_diagnostic.libelle_diagnostic",
+              "nativeQueryRef": "Diagnostic",
               "active": true,
-              "displayName": "Famille CIM-10"
+              "displayName": "Diagnostic"
             }
           ]
         },
@@ -326,7 +326,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 des familles par nombre de séjours (occupation des lits)'"
+                  "Value": "'Diagnostics classés par nombre de séjours (occupation des lits)'"
                 }
               }
             },
@@ -353,110 +353,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "084251196e149cd59ae6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_diagnostic"
-              }
-            },
-            "Property": "chapitre_cim10"
-          }
-        },
-        "type": "TopN",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "subquery",
-              "Expression": {
-                "Subquery": {
-                  "Query": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "d",
-                        "Entity": "dim_diagnostic",
-                        "Type": 0
-                      },
-                      {
-                        "Name": "f",
-                        "Entity": "fait_hospitalisation",
-                        "Type": 0
-                      }
-                    ],
-                    "Select": [
-                      {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "d"
-                            }
-                          },
-                          "Property": "chapitre_cim10"
-                        },
-                        "Name": "field"
-                      }
-                    ],
-                    "OrderBy": [
-                      {
-                        "Direction": 2,
-                        "Expression": {
-                          "Measure": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "f"
-                              }
-                            },
-                            "Property": "Hospitalisations"
-                          }
-                        }
-                      }
-                    ],
-                    "Top": 10
-                  }
-                }
-              },
-              "Type": 2
-            },
-            {
-              "Name": "d",
-              "Entity": "dim_diagnostic",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "d"
-                          }
-                        },
-                        "Property": "chapitre_cim10"
-                      }
-                    }
-                  ],
-                  "Table": {
-                    "SourceRef": {
-                      "Source": "subquery"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    ]
   }
 }

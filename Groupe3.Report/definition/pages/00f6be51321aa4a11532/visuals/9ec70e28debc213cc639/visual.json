@@ -23,11 +23,11 @@
                       "Entity": "dim_diagnostic"
                     }
                   },
-                  "Property": "chapitre_cim10"
+                  "Property": "libelle_diagnostic"
                 }
               },
-              "queryRef": "dim_diagnostic.chapitre_cim10",
-              "nativeQueryRef": "chapitre_cim10",
+              "queryRef": "dim_diagnostic.libelle_diagnostic",
+              "nativeQueryRef": "libelle_diagnostic",
               "active": true
             }
           ]
@@ -116,7 +116,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Famille de diagnostic (CIM-10)'"
+                  "Value": "'Diagnostic (CIM-10)'"
                 }
               }
             },

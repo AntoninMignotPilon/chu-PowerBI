@@ -155,6 +155,18 @@ table fait_hospitalisation
 		displayFolder: KPI 5 - Sexe et âge
 		lineageTag: e74d6aa1-6cbc-494a-aaa9-35a82e225dbc
 
+	measure 'Diagnostic le plus fréquent' =
+			VAR t = TOPN(1, ADDCOLUMNS(VALUES(dim_diagnostic[libelle_diagnostic]), "@h", [Hospitalisations], "@c", [Consultations]), [@h], DESC, [@c], DESC)
+			RETURN IF(NOT ISBLANK([Hospitalisations]), MAXX(t, dim_diagnostic[libelle_diagnostic]))
+		displayFolder: KPI 4 - Diagnostic
+		lineageTag: 831af925-36d8-4883-ac6f-1a69989b00f7
+
+	measure 'Diagnostic au taux le plus élevé' =
+			VAR t = FILTER(ADDCOLUMNS(VALUES(dim_diagnostic[libelle_diagnostic]), "@t", [Taux pour 1000 consultations], "@h", [Hospitalisations]), NOT ISBLANK([@h]))
+			RETURN MAXX(TOPN(1, t, [@t], DESC, [@h], DESC), dim_diagnostic[libelle_diagnostic])
+		displayFolder: KPI 4 - Diagnostic
+		lineageTag: 0837de76-e93b-4a1f-b0c8-bc62171f03af
+
 	column id_hospitalisation
 		dataType: int64
 		formatString: 0

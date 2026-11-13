@@ -23,13 +23,13 @@
                       "Entity": "dim_diagnostic"
                     }
                   },
-                  "Property": "chapitre_cim10"
+                  "Property": "libelle_diagnostic"
                 }
               },
-              "queryRef": "dim_diagnostic.chapitre_cim10",
-              "nativeQueryRef": "Famille CIM-10",
+              "queryRef": "dim_diagnostic.libelle_diagnostic",
+              "nativeQueryRef": "Diagnostic",
               "active": true,
-              "displayName": "Famille CIM-10"
+              "displayName": "Diagnostic"
             }
           ]
         },
@@ -234,7 +234,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Risque : taux d''hospitalisation par famille'"
+                  "Value": "'Risque : taux d''hospitalisation par diagnostic'"
                 }
               }
             },
@@ -341,7 +341,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Hospitalisations pour 1 000 consultations du même diagnostic · du plus élevé au plus faible'"
+                  "Value": "'Diagnostics classés par taux · hospitalisations pour 1 000 consultations du même diagnostic'"
                 }
               }
             },

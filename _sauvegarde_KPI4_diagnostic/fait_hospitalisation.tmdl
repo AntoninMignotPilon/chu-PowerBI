@@ -1,0 +1,220 @@
+table fait_hospitalisation
+	lineageTag: 950efa73-a506-4474-8dba-353247931ed0
+
+	measure 'Taux global hospitalisation' =
+			
+			DIVIDE(DISTINCTCOUNT(fait_hospitalisation[id_patient]), COUNTROWS(ALL(dim_patient)))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 65b2d3c7-c311-45bc-bfda-a4ae11801e6b
+
+	measure Hospitalisations = COUNTROWS(fait_hospitalisation)
+		formatString: 0
+		lineageTag: 864d6bc0-b84d-4236-8245-338d30119324
+
+	measure 'Patients hospitalisés' = DISTINCTCOUNT(fait_hospitalisation[id_patient])
+		formatString: #,##0
+		lineageTag: fbc08b5d-0c90-4ad4-93f9-b0ff0bda9ce9
+
+	measure 'Taux hospitalisation diagnostic' = DIVIDE(COUNTROWS(fait_hospitalisation), CALCULATE(COUNTROWS(fait_hospitalisation), REMOVEFILTERS(dim_diagnostic)))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: b0405b04-0001-4000-8000-000000000001
+
+	measure 'Diagnostics hospitalisés' = DISTINCTCOUNT(fait_hospitalisation[id_diagnostic])
+		formatString: #,##0
+		lineageTag: b0405b04-0002-4000-8000-000000000002
+
+	measure 'Taux hospitalisation sexe et âge' = DIVIDE(COUNTROWS(fait_hospitalisation), CALCULATE(COUNTROWS(fait_hospitalisation), REMOVEFILTERS(dim_patient), REMOVEFILTERS(fait_hospitalisation[tranche_age])))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: b0405b05-0001-4000-8000-000000000001
+
+	measure 'Taux hospitalisation par sexe' = DIVIDE(COUNTROWS(fait_hospitalisation), CALCULATE(COUNTROWS(fait_hospitalisation), REMOVEFILTERS(dim_patient)))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: b0405b05-0002-4000-8000-000000000002
+
+	measure 'Taux pour 1000 consultations' = DIVIDE([Hospitalisations], [Consultations]) * 1000
+		formatString: 0.00
+		displayFolder: KPI 4 - Diagnostic
+		lineageTag: 27265954-34d9-4914-a1df-6db339be8406
+
+	measure 'Taux moyen pour 1000' = CALCULATE([Taux pour 1000 consultations], ALLSELECTED(dim_diagnostic))
+		formatString: 0.00
+		displayFolder: KPI 4 - Diagnostic
+		lineageTag: c36fbe43-ae25-4a64-9472-e0abc87a434c
+
+	measure 'Écart au taux moyen' = IF(NOT ISBLANK([Hospitalisations]), [Taux pour 1000 consultations] - [Taux moyen pour 1000])
+		formatString: +0.00;-0.00;0.00
+		displayFolder: KPI 4 - Diagnostic
+		lineageTag: ed66ae9d-65bf-4e2c-8d56-73cc4d69188d
+
+	measure 'Part des hospitalisations' = DIVIDE([Hospitalisations], CALCULATE([Hospitalisations], REMOVEFILTERS(dim_diagnostic)))
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: KPI 4 - Diagnostic
+		lineageTag: 49af00e4-07cf-4c83-8d28-64f6890d676a
+
+	measure 'Famille la plus fréquente' =
+			VAR t = TOPN(1, ADDCOLUMNS(VALUES(dim_diagnostic[chapitre_cim10]), "@h", [Hospitalisations]), [@h], DESC)
+			RETURN IF(NOT ISBLANK([Hospitalisations]), MAXX(t, dim_diagnostic[chapitre_cim10]))
+		displayFolder: KPI 4 - Diagnostic
+		lineageTag: 289d7f54-6566-4233-a0a3-21f24577ce54
+
+	measure 'Part de la famille la plus fréquente' =
+			VAR h = MAXX(ADDCOLUMNS(VALUES(dim_diagnostic[chapitre_cim10]), "@h", [Hospitalisations]), [@h])
+			RETURN DIVIDE(h, [Hospitalisations])
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: KPI 4 - Diagnostic
+		lineageTag: c5cba768-1a33-4873-b0ff-05331fbf5f2e
+
+	measure 'Famille au taux le plus élevé' =
+			VAR t = FILTER(ADDCOLUMNS(VALUES(dim_diagnostic[chapitre_cim10]), "@t", [Taux pour 1000 consultations], "@h", [Hospitalisations]), [@h] >= 30)
+			RETURN MAXX(TOPN(1, t, [@t], DESC), dim_diagnostic[chapitre_cim10])
+		displayFolder: KPI 4 - Diagnostic
+		lineageTag: a2813d1d-643b-4264-9482-c0ec5eb5ba8e
+
+	measure 'Évolution dernière année' =
+			VAR a = MAX(dim_temps[annee])
+			VAR cur = CALCULATE([Hospitalisations], REMOVEFILTERS(dim_temps), dim_temps[annee] = a)
+			VAR prev = CALCULATE([Hospitalisations], REMOVEFILTERS(dim_temps), dim_temps[annee] = a - 1)
+			RETURN DIVIDE(cur - prev, prev)
+		formatString: +0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: KPI 4 - Diagnostic
+		lineageTag: 7b0deb3e-e197-46c2-b19b-10a5b0961432
+
+	measure 'Patients vus' = DISTINCTCOUNT(fait_consultation[id_patient])
+		formatString: #,##0
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: 8b732c13-ac05-48cc-9dcf-040a7a05f75c
+
+	measure 'Taux patients hospitalisés' = DIVIDE([Patients hospitalisés], [Patients vus])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: 7eed710a-46c6-412c-a5b5-9d58a192b8b9
+
+	measure 'Taux Femmes' = CALCULATE([Taux patients hospitalisés], dim_patient[sexe] = "F")
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: c6d0ef65-46ae-4f5d-9a5f-5cf4d76a28dd
+
+	measure 'Taux Hommes' = CALCULATE([Taux patients hospitalisés], dim_patient[sexe] = "M")
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: 74f60257-bdf8-4dec-ba13-3108f0e1591b
+
+	measure 'Écart Femmes Hommes' = ([Taux Femmes] - [Taux Hommes]) * 100
+		formatString: +0.00\ \p\t;-0.00\ \p\t;0.00\ \p\t
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: c618931c-aa4e-46a3-88e2-569bba5467aa
+
+	measure 'Hospitalisations Femmes' = CALCULATE([Hospitalisations], dim_patient[sexe] = "F")
+		formatString: #,##0
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: b08df88e-4319-4dc3-b716-34681fa9b9d9
+
+	measure 'Hospitalisations Hommes' = CALCULATE([Hospitalisations], dim_patient[sexe] = "M")
+		formatString: #,##0
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: 4114d7cd-1e95-4ee0-ad1e-ee492771a965
+
+	measure 'Hommes (pyramide)' = - [Hospitalisations Hommes]
+		formatString: #,##0;#,##0;0
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: 0b9f0e23-5d9e-4219-a7b8-38d1bd639e48
+
+	measure 'Tranche la plus exposée' =
+			VAR t = ADDCOLUMNS(VALUES(dim_tranche_age[tranche_age]), "@t", [Taux patients hospitalisés])
+			RETURN MAXX(TOPN(1, t, [@t], DESC), dim_tranche_age[tranche_age])
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: 58bee02c-ed87-4926-8365-0a50de177bf7
+
+	measure 'Taux de la tranche la plus exposée' = MAXX(VALUES(dim_tranche_age[tranche_age]), [Taux patients hospitalisés])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: d43e2900-af10-4de9-9711-5a2b4b480cb7
+
+	measure 'Taux ensemble des patients' = CALCULATE([Taux patients hospitalisés], REMOVEFILTERS(dim_patient), REMOVEFILTERS(dim_tranche_age))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: ae743dc9-1ba9-48a9-b2af-d1fbe7a17549
+
+	measure 'Écart vs ensemble des patients' = ([Taux patients hospitalisés] - [Taux ensemble des patients]) * 100
+		formatString: +0.00\ \p\t;-0.00\ \p\t;0.00\ \p\t
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: abefb3dc-5fd8-49de-a60c-9a7295d2750a
+
+	measure 'Part du profil dans les séjours' = DIVIDE([Hospitalisations], CALCULATE([Hospitalisations], REMOVEFILTERS(dim_patient), REMOVEFILTERS(dim_tranche_age)))
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: c6564ec8-de34-466d-994e-c412aaa43f1b
+
+	measure 'Part des séjours du profil' = DIVIDE([Hospitalisations], CALCULATE([Hospitalisations], REMOVEFILTERS(dim_diagnostic), ALLSELECTED(dim_patient)))
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: db457e04-cf36-4749-8a59-ba27523919df
+
+	measure 'Répartition Femmes Hommes' = DIVIDE([Hospitalisations], CALCULATE([Hospitalisations], ALLSELECTED(dim_patient)))
+		formatString: 0\ %;-0\ %;0\ %
+		displayFolder: KPI 5 - Sexe et âge
+		lineageTag: e74d6aa1-6cbc-494a-aaa9-35a82e225dbc
+
+	column id_hospitalisation
+		dataType: int64
+		formatString: 0
+		lineageTag: 1119c835-c5cc-4a37-8130-fda678c0a644
+		summarizeBy: sum
+		sourceColumn: id_hospitalisation
+
+		annotation SummarizationSetBy = Automatic
+
+	column tranche_age
+		dataType: string
+		lineageTag: 0161f463-e3e1-4e5a-b3c7-ce3f37194b5f
+		summarizeBy: none
+		sourceColumn: tranche_age
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_patient
+		dataType: string
+		lineageTag: c4508865-e320-4ed4-aac7-4c27234c428e
+		summarizeBy: none
+		sourceColumn: id_patient
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_diagnostic
+		dataType: string
+		lineageTag: b79f5f67-97a3-43ee-8075-775435686b85
+		summarizeBy: none
+		sourceColumn: id_diagnostic
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_etablissement
+		dataType: string
+		lineageTag: f5a8b59a-caf2-4256-a417-3147942e5a15
+		summarizeBy: none
+		sourceColumn: id_etablissement
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_complete
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9b16d9c8-4649-4cd0-b007-6064a59a2f82
+		summarizeBy: none
+		sourceColumn: date_complete
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition fait_hospitalisation = m
+		mode: import
+		source =
+				let
+				    Source = Odbc.DataSource("dsn=Hive Gold", [HierarchicalNavigation=true]),
+				    HIVE_Database = Source{[Name="HIVE",Kind="Database"]}[Data],
+				    gold_Schema = HIVE_Database{[Name="gold",Kind="Schema"]}[Data],
+				    fait_hospitalisation_Table = gold_Schema{[Name="fait_hospitalisation",Kind="Table"]}[Data]
+				in
+				    fait_hospitalisation_Table
+
